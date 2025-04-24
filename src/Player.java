@@ -1,14 +1,24 @@
 public class Player {
+    private String name;
     private String team;
     private int age;
     private double height;
     private char position;
 
-    public Player(String theTeam, int theAge, double theHeight, char thePosition) {
+    public Player(String theName, String theTeam, int theAge, double theHeight, char thePosition) {
+        name = theName;
         team = theTeam;
         age = theAge;
         height = theHeight;
         position = thePosition;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getTeam() {
