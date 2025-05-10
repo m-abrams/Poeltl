@@ -1,13 +1,17 @@
+// POELTL Game by Max Abrams
 import java.util.ArrayList;
 
 public class PlayerDatabase {
+    // Instance variables
     private ArrayList<Player> players;
 
+    // Player database constructor
     public PlayerDatabase() {
         players = new ArrayList();
         loadPlayers();
     }
 
+    // Loads all the players into the game, called at the beginning of each new Poeltl instance
     public void loadPlayers() {
 //WESTERN CONFERENCE
 
@@ -18,7 +22,7 @@ public class PlayerDatabase {
         players.add(new Player("Brandon Podziemski", "GSW", 22, 76, 'G', "Pac"));
         players.add(new Player("Jimmy Butler", "GSW", 35, 79, 'F', "Pac"));
         players.add(new Player("Draymond Green", "GSW", 35, 78, 'F', "Pac"));
-        players.add(new Player("Quinten Post", "GSW", 25, 21, 'C', "Pac"));
+        players.add(new Player("Quinten Post", "GSW", 25, 84, 'C', "Pac"));
 
         // Lakers
         players.add(new Player("Luka Doncic", "Lakers", 26, 78, 'G', "Pac"));
@@ -123,10 +127,16 @@ public class PlayerDatabase {
         players.add(new Player("Victor Wembanyama", "Spurs", 21, 88, 'C', "SW"));
     }
 
+    // Getter and setter methods
     public ArrayList<Player> getPlayers() {
         return players;
     }
 
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
+
+    // Method is used to check if the guess is the same name as one of the players in load players
     public Player getPlayerByName(String name) {
         for (Player p: players) {
             if(p.getName().toLowerCase().equals(name.toLowerCase())) {
@@ -136,6 +146,7 @@ public class PlayerDatabase {
         return null;
     }
 
+    // Random player method, which is used to pick a correct player
     public Player getRandomPlayer() {
         int index = (int) (Math.random() * players.size());
         return players.get(index);

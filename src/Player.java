@@ -1,4 +1,6 @@
+// POELTL Game by Max Abrams
 public class Player {
+    // Instance variables
     private String name;
     private String team;
     private int age;
@@ -6,7 +8,7 @@ public class Player {
     private char position;
     private String conference;
 
-
+    // Player constructor
     public Player(String theName, String theTeam, int theAge, double theHeight, char thePosition, String theConference) {
         name = theName;
         team = theTeam;
@@ -16,6 +18,7 @@ public class Player {
         conference = theConference;
     }
 
+    // Getter and setter methods
     public String getName() {
         return name;
     }
@@ -49,6 +52,7 @@ public class Player {
         return height;
     }
 
+    // Formats height from a double into x'x" format
     public String getHeightFormatted(double height) {
         int feet = (int) (height / 12);
         int inches = (int) (height % 12);
