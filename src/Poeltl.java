@@ -117,6 +117,11 @@ public class Poeltl implements KeyListener {
         }
         // If the character typed is a letter or space, adds that character to the typing text
         // Repaints the window so you can see the text update as you type
+        char letter = e.getKeyChar();
+        if (Character.isLetter(letter) || Character.isWhitespace(letter)) {
+            typingText += letter;
+            window.repaint();
+        }
     }
 
     @Override
@@ -168,6 +173,7 @@ public class Poeltl implements KeyListener {
         correctPlayer = list.getRandomPlayer();
         window.repaint();
     }
+
 
     @Override
     public void keyReleased(KeyEvent e) {
